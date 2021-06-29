@@ -1,5 +1,10 @@
 #!/usr/bin/bash
-file=$(zenity --file-selection --title='Open file')
+if [ -z "$1" ]
+then
+  file=$(zenity --file-selection --title='Open file')
+else
+  file=$1
+fi
 
 if [ "$file" = "" ]
 then
